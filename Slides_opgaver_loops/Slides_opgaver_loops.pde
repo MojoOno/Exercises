@@ -1,3 +1,10 @@
+//Hvilken som helst tabel
+
+/*int tabel = 4;
+for (int i = 1; i <= 10; i++) {
+print(i * tabel + " "); }*/
+
+
 //7-tabellen
 
 //For-Loop
@@ -70,4 +77,20 @@ while(i < 1) {
     println(stjerne); 
     s++;
   }
+}*/
+
+
+//Stjerne rampe rigtige vej
+
+int numberOfLines = 10;
+
+for(int i = 0; i <= numberOfLines; i++) {
+  println("*".repeat(i + 1)); 
+}
+
+//Stjerne rampe modsatte vej
+/*int numberOfLines = 10;
+
+for(int i = 0; i <= numberOfLines; i++) {
+  println(" ".repeat(numberOfLines-i) + "*".repeat(i + 1));  //Jeg har tilføjet et -1 til repeat(numberOfLines) for at vende den om
 }*/
