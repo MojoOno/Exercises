@@ -1,4 +1,4 @@
-//Example 7-3
+//Example + Exercise 7-3
 /*int x = 0;
  int y = 2*height/2;
  int speed = 3;
@@ -40,11 +40,12 @@
  line(x-4, y+4, x+4, y+4);
  }*/
 
+//-----------------------------------------------
 
 //Exercise 7-4
 
 /*void setup(){
- sum(10, 24, 30);
+ sum(24, 24, 30);
  }
  
  void sum(int a, int b, int c){
@@ -52,26 +53,41 @@
  println(total);
  }*/
 
+// ------------------------------------------------
 
-//Exercise 7-5
+//Exercise 7-5 (2 eksempler nedenfor)
+//Eksempel 1
+
+/*void setup(){
+ println(multiply(5.2, 9.0));
+ }
+ 
+ float multiply(float a, float b) {
+ return a * b;
+ 
+ }*/
+
+//Eksempel 2
 
 /*void setup(){
  multiply(5.2, 9.0);
  }
  
  void multiply(float a, float b) {
- float total = a + b;
+ float total = a * b;
  println(total);
- } */
+ }*/
+
+// -----------------------------------------------
 
 //Exercise 7-6
 
-/*int globalX = 0;
+/*int globalX = 1;
  int globalY = 100;
- int speed = 1;
+ int speed = 5;
  
  void setup() {
- size(200, 200);
+ size(600, 600);
  smooth();
  }
  
@@ -79,7 +95,7 @@
  background(0);
  move();
  bounce();
- drawCar(width/2, width/2, 100, 244 );
+ drawCar(globalX, height/2, 100, 244 );
  }
  
  void move() {
@@ -89,6 +105,7 @@
  
  void bounce() {
  if ((globalX > width) || (globalX < 0)) {
+   speed = speed * - 1;
  }
  }
  
@@ -103,21 +120,21 @@
  rect(x+offset, y-offset, offset, offset/2);
  rect(x-offset, y+offset, offset, offset/2);
  rect(x+offset, y+offset, offset, offset/2);
- }
- */
+ }*/
+ 
 
 //-----------------------------------------
 
 /*void setup() {
-  float num = 10;
-  println("The number is: " + num);
-  randomizer(num);
-  println("The number is: " + num);
-}
-void randomizer(float newnum) {
-  newnum = newnum + random(-2, 2);
-  println("The new number is: " + newnum);
-}*/
+ float num = 10;
+ println("The number is: " + num);
+ randomizer(num);
+ println("The number is: " + num);
+ }
+ void randomizer(float newnum) {
+ newnum = newnum + random(-2, 2);
+ println("The new number is: " + newnum);
+ }*/
 
 
 
@@ -127,17 +144,31 @@ void randomizer(float newnum) {
 
 /*
 a
-e
-f
-b
-c
-g
-e
-f
-h
-d
-e
-f
-*/
+ e
+ f
+ b
+ c
+ g
+ e
+ f
+ h
+ d
+ e
+ f
+ */
 
 //-----------------------------------------
+
+//Exercise 7-8
+
+/*void setup(){
+ tempConverter(100);
+ }
+ 
+ float tempConverter(float F){
+ 
+ float C = (F-32.0)*(5.0/9.0);
+ String fahrenheitConverted = F + " fahrenheit er det samme som " + C + " celsius.";
+ print(fahrenheitConverted);
+ return F;
+ }*/

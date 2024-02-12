@@ -2,7 +2,7 @@
 
 /*int tabel = 4;
 for (int i = 1; i <= 10; i++) {
-print(i * tabel + " "); }*/
+println(i * tabel + " "); }*/
 
 
 //7-tabellen
@@ -82,11 +82,11 @@ while(i < 1) {
 
 //Stjerne rampe rigtige vej
 
-int numberOfLines = 10;
+/*int numberOfLines = 10;
 
 for(int i = 0; i <= numberOfLines; i++) {
   println("*".repeat(i + 1)); 
-}
+}*/
 
 //Stjerne rampe modsatte vej
 /*int numberOfLines = 10;
