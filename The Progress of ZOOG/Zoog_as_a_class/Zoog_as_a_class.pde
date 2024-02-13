@@ -9,20 +9,20 @@ void setup() {
   size(200, 200);
   smooth();
   zoog1 = new Zoog(100, 125, 60, 60, 16);
-  zoog2 = new Zoog(50, 60, 20, 20, 5);
+  zoog2 = new Zoog(30, 60, 40, 40, 10);
 }
 
 void draw() {
   background(255);
   float factor = constrain(mouseX/10, 0, 5);
-  zoog1.jiggle(factor);
-  zoog1.display();
+  //zoog1.jiggle(factor);
+  zoog1.display(color(random(100), random(200), random(30-50)));
   //zoog1.up();
   //zoog1.shaking();
   //zoog1.sideWays();
   //zoog1.jiggle(5);
-  zoog2.jiggle(factor);
-  zoog2.display();
+  //zoog2.jiggle(factor);
+  zoog2.display(color(random(200), random(50), random(70)));
 }
 
 class Zoog {
@@ -39,7 +39,7 @@ class Zoog {
     eyeSize = newEyeSize;
   }
   //Display Zoog
-  void display() {
+  void display(color eyeColor) {
     //Set ellipses and rects to CENTER mode
     rectMode(CENTER);
     ellipseMode(CENTER);
@@ -59,10 +59,10 @@ class Zoog {
     ellipse(zoogX, zoogY-zoogH, zoogW, zoogH);
 
     //Zoogs øjne
-    eyeR = random(255);
+    /*eyeR = random(255);
     eyeG = random(255);
-    eyeB = random(255);
-    fill(eyeR, eyeG, eyeB);
+    eyeB = random(255);*/
+    fill(eyeColor);
     ellipse(zoogX-zoogW/3, zoogY-zoogH, eyeSize, eyeSize*2);
     ellipse(zoogX+zoogW/3, zoogY-zoogH, eyeSize, eyeSize*2);
 
