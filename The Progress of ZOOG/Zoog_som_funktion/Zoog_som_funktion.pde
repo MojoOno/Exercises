@@ -1,0 +1,96 @@
+// Making Zoog from scratch
+//Global scope
+
+float zoogX;
+float zoogY;
+float zoogW;
+float zoogH;
+float eyeSize;
+
+float eyeR;
+float eyeG;
+float eyeB;
+
+float xSpeed = 3;
+float ySpeed = 1;
+
+void setup() {
+  size(400, 200); //Sætter størrelsen på lærrede
+  zoogX = width/2;
+  zoogY = height/2;
+  zoogW = 20; //vi går udfra at kroppen er Zoogs "center". Kroppens width er == 20, derfor 20.
+  zoogH = 100; //Det samme som ovenfor. Kroppens height er == 100, derfor 100.
+  eyeSize = 16; //Vi tager bredden som grund eyeSize da dimensionerne er *2 på øjnene.
+  smooth(); //Aktiverer anti-aliasing
+}
+
+void draw() {
+  background(255); //Sætter farven på baggrunden
+
+  //Definerer hvor formerne starter. This case i CENTER
+  rectMode(CENTER);
+  ellipseMode(CENTER);
+  zoogKrop();
+  zoogHovede();
+  zoogØjne(random(255),random(255), random(255));
+  zoogBen();
+  //zoogUp();
+  //zoogShaking();
+  //zoogSideWays();
+  //zoogJiggle(5);
+}
+
+//Zoogs krop
+void zoogKrop() {
+  stroke(0);
+  fill(150);
+  rect(zoogX, zoogY, zoogW, zoogH);
+}
+
+//Zoogs hovede
+void zoogHovede() {
+  fill(255);
+  ellipse(zoogX, zoogY-30, zoogW+40, zoogH-40);
+}
+
+//Zoogs øjne
+void zoogØjne(float red, float green, float blue) {
+  eyeR = random(255);
+  eyeG = random(255);
+  eyeB = random(255);
+  fill(eyeR, eyeG, eyeB);
+  ellipse(zoogX-19, zoogY-30, eyeSize, eyeSize*2);
+  ellipse(zoogX+19, zoogY-30, eyeSize, eyeSize*2);
+}
+
+//Zoogs ben
+void zoogBen() {
+  line(zoogX-10, zoogY+50, zoogX-20, zoogY+60);
+  line(zoogX+10, zoogY+50, zoogX+20, zoogY+60);
+}
+
+//Zoog moves up
+void zoogUp() {
+  zoogY = zoogY - 1;
+}
+
+//Zoog moves sideways randomly aka. shakes
+void zoogShaking() {
+  zoogX = random(175, 225);
+}
+
+void zoogSideWays(){
+zoogX = zoogX + xSpeed;
+if ((zoogX > width) || (zoogX < 0)) {
+  xSpeed = xSpeed * -1; }
+}
+
+void zoogJiggle(float speed) {
+  //Change the x and y location of Zoog randomly
+  zoogX = zoogX + random(-1,1) * speed;
+  zoogY = zoogY + random(-1,1) * speed;
+  
+  //Constrain Zoog to window
+  zoogX = constrain(zoogX,0,width);
+  zoogY = constrain(zoogY,0,height);
+}
