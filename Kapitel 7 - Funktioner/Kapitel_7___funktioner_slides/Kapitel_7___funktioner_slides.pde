@@ -71,6 +71,6 @@ void erDetSkudÅr(int årsTal){
 if((årsTal%4==0 && årsTal%100!=0) || (årsTal%400==0)) {
   println(årsTal + " er skudår makker");
 } else {
-println(årsTal + " er ikke skudår din klovno");
+println(årsTal + " er ikke skudår makker");
 }
 }
