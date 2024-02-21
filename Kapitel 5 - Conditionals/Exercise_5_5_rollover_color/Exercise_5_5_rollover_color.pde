@@ -13,7 +13,7 @@ void draw() {
   stroke(255);
   
   if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
-    fill(random(0,255), random(0,255), random(0,255));
+    fill(255);
   } else {
     fill(0); 
   }
